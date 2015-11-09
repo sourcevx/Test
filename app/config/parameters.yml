@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: test
+    database_user: root
+    database_password: zxcv.1234
+    mailer_transport: smtp
+    mailer_host: smtp.fpcgil.it
+    mailer_user: santagata@fpcgil.it
+    mailer_password: Qaz.Plm12
+    secret: e40ff43f6227cec503c89a6246d27a243f2492a8

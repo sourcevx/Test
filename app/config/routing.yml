@@ -1,0 +1,48 @@
+anagrafica:
+    resource: "@AnagraficaBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+file_file:
+    resource: "@FileFileBundle/Controller/"
+    type:     annotation
+    prefix:   /upload
+
+_user_bundle:
+      resource: "@FpUserBundle/Resources/config/routing.yml"
+  
+
+rubrica:
+    resource: "@RubricaBundle/Controller/"
+    type:     annotation
+    prefix:   /rubrica
+    
+
+app_blog:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+    prefix:   /blog
+    
+    
+app_article:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+    prefix:   /article
+    
+     
+app_calc:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+    
+task_home:
+    resource: "@TaskBundle/Controller"
+    type:     annotation
+    prefix:   /taskhome
+    
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"    
+    
+sandbox:
+    resource:   '@KPhoenSandboxBundle/Resources/config/routing.yml'
+    prefix:     /

@@ -1,0 +1,28 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+
+#parameters:
+###    parameter_name: value
+##
+#services:
+##    service_name:
+##        class: AppBundle\Directory\ClassName
+##        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+#services:
+#    my.listener:
+#        class: RubricaBundle\EventListener\WriteTable
+#        tags:
+#            - { name: doctrine.event_listener, event: postPersist }
+services:
+    app.form.registrazione:
+        class: Fp\UserBundle\Form\RegistrazioneType
+        tags:
+            - { name: form.type, alias: app_user_registration }
+    app_roles_helper:
+        class: Fp\UserBundle\Services\RolesHelper
+        arguments: ['%security.role_hierarchy.roles%']
+    app_user.registration.form.type:
+        class: Fp\UserBundle\Form\EditType
+        arguments: [%fos_user.model.user.class%, @app_roles_helper]
+        tags:
+          - { name: form.type, alias: user_registration }

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ asset('bundles/main/css/bootstrap.min.css') }}">
+    {% block stylesheets %}{% endblock %}
+    {% javascripts '@RubricaBundle/Resources/public/js/*' %}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+</head>
+<body>
+    
+{% block body %}{% endblock %}
+
+
+</body>
+</html>
