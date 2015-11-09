@@ -1,0 +1,138 @@
+{# app/Resources/views/Rubrica/index.html.twig #}
+{% extends '::base.html.twig' %}
+
+  {% block stylesheets %}
+       <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+     <h1>Elenco Telefonico Interno</h1>
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Telefono</th>
+                <th>Cellulare</th>
+                <th>Email</th>
+                <th>Ufficio</th>
+                <th>typeUfficio</th>
+                <th>Data Crazione</th>
+                <th>Data Modifica</th>
+                <th>Eta</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+       <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td>{{ entity.nome }}</td>
+                    <td>{{ entity.cognome }}</td>
+                    <td>{{ entity.telefono }}</td>
+                    <td>{{ entity.cellulare }}</td>
+                    <td>{{ entity.email }}</td>
+                    <td>{{ entity.ufficio.ufficio }}</td>
+                    <td>{{ entity.ufficio.typeufficio }}</td>
+                    <td>{% if entity.created %}{{ entity.created|date('Y-m-d') }}{% endif %}</td>
+                    <td>{% if entity.modify %}{{ entity.modify|date('Y-m-d') }}{% endif %}</td>
+{#                    <td>{% if entity.datanascita %}{{ entity.getEta()}}{% endif %}</td>#}
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('rubrica_show', { 'id': entity.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('rubrica_edit', { 'id': entity.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {#<h3>Lista Ufficio</h3>
+    <table class="Ufficio">
+        <thead>
+            <tr>
+                <th>Ufficio</th>
+                <th>Tipo Ufficio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entity in ufficio %}
+                <tr>
+                    <td>{{ entity.ufficio  }}</td>
+                    <td>{{ entity.typeufficio  }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+     rende l'unico campo: description 
+      <h3>Lista Area</h3>
+    <table class="Aree">
+        <thead>
+            <tr>
+                <th>Area</th>
+            </tr>
+        </thead>
+        <tbody>
+{#                  itera per ogni tag esistente e rende il suo unico campo: name 
+            {% for area in aree %}
+                <tr>
+                    <td>{{ area.descrizione }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>#}
+    {#  <p>rec_rubrica_id = {{ rec_rubrica.id }} --- {{ rec_rubrica.ufficio.id }} --- {{ rec_rubrica.ufficio.ufficio }}</p>#}
+    {% if is_granted('ROLE_USER') %}
+        <ul>
+            <li>
+                <a href="{{ path('rubrica_new') }}">
+                    Create a new entry
+                </a>
+            </li>
+        </ul>
+    {% endif %}
+    <ul>
+        <li>
+            <a href="{{ path('ufficio_new') }}">
+                Create a new Ufficio
+            </a>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <a href="{{ path('rubrica_search') }}">
+                Ricerca Elenco Telefonico
+            </a>
+        </li>
+    </ul>
+         <ul>
+        <li>
+            <a href="{{ path('rubrica_localita') }}">
+                Ricerca Localita
+            </a>
+        </li>
+    </ul>
+             <ul>
+        <li>
+            <a href="{{ path('rubrica_sessioni') }}">
+                Sessioni
+            </a>
+        </li>
+    </ul>
+                  <ul>
+        <li>
+            <a href="{{ path('rubrica_upload') }}">
+                Upload File Uno
+            </a>
+        </li>
+    </ul>
+        <ul>
+        <li>
+            <a href="{{ path('products_new') }}">
+                Upload File
+            </a>
+        </li>
+    </ul>
+{% endblock %}

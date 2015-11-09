@@ -1,0 +1,15 @@
+{# src/Resources/views/product/validation.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block title %}Prodotti{% endblock %}
+
+{% block sidebar %}
+  
+<h3>il prodotto ha i seguenti errori</h3>
+<ul>
+{% for error in errors %}
+    <li>{{ error.message }}</li>
+{% endfor %}
+</ul>
+    
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "FpUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}   
+
+
+    <div class="container">    
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-primary" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Autenticazione</div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px; ">
+                            {#<a style="color:white;" href="#">Hai dimenticato la password?</a>#}
+                        </div>
+                    </div>     
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                            
+                        <form id="loginform" class="form-horizontal" action="{{ path("fos_user_security_check") }}" method="post" role="form">
+                          <input  type="hidden" name="_csrf_token" value="{{ csrf_token }}" />          
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input  type="email" class="form-control" id="username" name="_username" value="" required="required" placeholder="La tua e-mail">                                        
+                                    </div>
+                                
+                            <div style="margin-bottom: 25px" class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        <input id="password" name="_password" type="password" class="form-control" required="required" placeholder="La tua password">
+                                    </div>
+                                    
+
+                                
+{#                            <div class="input-group">
+                                      <div class="checkbox">
+                                        <label>
+                                          <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                                        </label>
+                                      </div>
+                                    </div>#}
+
+
+                                <div style="margin-top:10px" class="form-group">
+                                    <!-- Button -->
+
+                                    <div class="col-md-12 controls ">
+                                     <button type="submit" class="btn btn-success  btn-lg pull-right"><span class="fa fa-sign-in" aria-hidden="true"></span> ACCEDI</button>
+                                     
+                                      
+
+                                    
+
+                                <div class="form-group">
+                                    <div class="col-md-12 control">
+                                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                        {% if error %}
+                        <div  class="alert alert-danger col-sm-12"><strong>Accesso negato! </strong>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                                        </div>
+                                    </div>
+                                </div>    
+                            </form>     
+
+
+
+                        </div>                     
+                    </div>  
+        </div>
+
+    </div>
+
+                
+
+                
+                
+                
+
+
+{% endblock fos_user_content %}

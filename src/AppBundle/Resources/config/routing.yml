@@ -1,0 +1,24 @@
+#app_homepage:
+#    path:     /hello/{name}
+#    defaults: { _controller: AppBundle:Hello:index }
+#    
+#app_index:
+#    resource: "@AppBundle/Controller"
+#    type:     annotation
+    
+     
+    #path:     /blog/{page}
+    #defaults: { _controller: AppBundle:Blog:index }
+
+    
+#app_Show:
+#    path:     /show/{slut}
+#    defaults: { _controller: AppBundle:Blog:show }
+#    
+#app_delete:
+#    path:     /delete/{del}
+#    defaults: { _controller: AppBundle:Blog:delete }
+#
+#app_Update:
+#    path:     /update/
+#    defaults: { _controller: AppBundle:Blog:update }

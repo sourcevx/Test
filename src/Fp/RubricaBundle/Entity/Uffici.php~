@@ -1,0 +1,66 @@
+<?php
+
+namespace Fp\RubricaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Uffici
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Fp\RubricaBundle\Entity\UfficiRepository")
+ */
+class Uffici
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ufficio", type="string", length=255)
+     */
+    private $ufficio;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set ufficio
+     *
+     * @param string $ufficio
+     *
+     * @return Uffici
+     */
+    public function setUfficio($ufficio)
+    {
+        $this->ufficio = $ufficio;
+
+        return $this;
+    }
+
+    /**
+     * Get ufficio
+     *
+     * @return string
+     */
+    public function getUfficio()
+    {
+        return $this->ufficio;
+    }
+}
+

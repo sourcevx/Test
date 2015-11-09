@@ -1,0 +1,72 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+   
+
+    <div class="row">
+        <div class="col-md-12">
+            <form action="{{ path('examples_dependent_selects_location_edit', {'slug': city.slug}) }}" method="POST" novalidate>
+                {{ form_row(form.address) }}
+                {{ form_row(form.country) }}
+                {{ form_row(form.province) }}
+                {{ form_row(form.city) }}
+                {{ form_rest(form) }}
+                <button type="submit" class="btn btn-success">
+                    Guardar
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        $(function(){
+            $("#location_country").change(function(){
+                var data = {
+                    country_id: $(this).val()
+                };
+
+                $.ajax({
+                    type: 'post',
+                    url: '{{ path("select_provinces") }}',
+                    data: data,
+                    success: function(data) {
+                        var $province_selector = $('#location_province');
+
+                        $province_selector.html('<option>Provincia</option>');
+
+                        for (var i=0, total = data.length; i < total; i++) {
+                            $province_selector.append('<option value="' + data[i].id + '">' + data[i].name + '</option>');
+                        }
+
+                        $('#location_city').html("<option>Ciudad</option>");
+                    }
+                });
+            });
+
+            $("#location_province").change(function(){
+                var data = {
+                    province_id: $(this).val()
+                };
+
+                $.ajax({
+                    type: 'post',
+                    url: '{{ path("select_cities") }}',
+                    data: data,
+                    success: function(data) {
+                        var $city_selector = $('#location_city');
+
+                        $city_selector.html('<option>Ciudad</option>');
+
+                        for (var i=0, total = data.length; i < total; i++) {
+                            $city_selector.append('<option value="' + data[i].id + '">' + data[i].name + '</option>');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+{% endblock %}
+

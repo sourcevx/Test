@@ -1,0 +1,323 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Task
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\TaskRepository")
+ */
+class Task
+{
+
+    
+
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="data_due", type="datetime")
+     */
+    private $dataDue;
+    
+    
+       /**
+     * @var string
+     *
+     * @ORM\Column(name="name1", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name1;
+    
+       /**
+     * @var string
+     *
+     * @ORM\Column(name="name2", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name2;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name3", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name3;
+    
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name4", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name4;
+        
+    
+
+    
+    
+    //______________________________________________________________________________________________________________
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name5", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name5;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name6", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name6;
+          /**
+     * @var string
+     *
+     * @ORM\Column(name="name7", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name7;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name8", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name8;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name9", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name9;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name10", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name10;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name11", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name11;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name12", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name12;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name13", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name13;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name14", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name14;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name15", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name16;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name17", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name17;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name18", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name18;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name19", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name19;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name20", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name20;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name21", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name21;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name22", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name22;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name23", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name23;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name24", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name24;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name25", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name25;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name26", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name26;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name27", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name27;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name28", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name28;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name29", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name29;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name30", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name30;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="name31", type="string", length=255)
+     * 
+     * @Assert\NotNull()
+     */
+    private $name31;
+    
+    
+}

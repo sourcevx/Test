@@ -1,0 +1,63 @@
+{# app/Resources/views/default/new.html.twig #}
+{% extends '::base.html.twig' %}
+
+
+
+{% block title %}Task{% endblock %}
+
+
+{% block body %}
+    
+            {% block sidebar %}
+                <div id="sidebar">
+                  {#  da base.html.twig  #}
+                    <ul>
+                        <li><a href="{{ path('app_main_contact') }}">HomePage</a></li>
+                     </ul>
+                </div>
+
+                {% endblock %}
+{% block form1 %}
+    
+{# {{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+#}
+
+{# app/Resources/views/default/new.html.twig 
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_errors(form) }}
+{#{{ form_row(form.task) }}
+{{ form_row(form.dueDate) }}    
+{{ form.vars.value.task }}#}
+
+
+{{ form_end(form) }}
+
+
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <div>
+        {{ form_label(form.task) }}
+        {{ form_errors(form.task) }}
+        {{ form_widget(form.task) }}
+    </div>
+
+    <div>
+        {{ form_label(form.dueDate) }}
+        {{ form_errors(form.dueDate) }}
+        {{ form_widget(form.dueDate) }}
+    </div>
+
+    <div>
+        {{ form_widget(form.save) }}
+    </div>
+
+{{ form_end(form) }}
+
+
+{% endblock %}
+            {% endblock %}
+           

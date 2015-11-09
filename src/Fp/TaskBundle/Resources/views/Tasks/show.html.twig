@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Tasks</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Taskname</th>
+                <td>{{ entity.taskName }}</td>
+            </tr>
+            <tr>
+                <th>Taskdescription</th>
+                <td>{{ entity.taskDescription }}</td>
+            </tr>
+            <tr>
+                <th>Taskrun</th>
+                <td>{{ entity.taskRun|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Taskend</th>
+                <td>{{ entity.taskEnd|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('task_create') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('task_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

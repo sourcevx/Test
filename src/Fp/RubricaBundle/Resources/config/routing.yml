@@ -1,0 +1,3 @@
+#rubrica_homepage:
+#    path:     /hello/{name}
+#    defaults: { _controller: RubricaBundle:Default:index }

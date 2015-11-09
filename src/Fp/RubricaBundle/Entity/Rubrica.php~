@@ -1,0 +1,146 @@
+<?php
+
+namespace Fp\RubricaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * Rubrica
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Fp\RubricaBundle\Entity\RubricaRepository")
+ * @ORM\HasLifecycleCallbacks()
+ */
+class Rubrica
+{
+    
+    protected $descrizione;
+
+    protected $area;
+
+    public function __construct()
+    {
+        $this->area = new ArrayCollection();
+    }
+
+    public function getDescrizione()
+    {
+        return $this->descrizione;
+    }
+
+    public function setDescrizione($descrizione)
+    {
+        $this->descrizione = $descrizione;
+    }
+
+    public function getArea()
+    {
+        return $this->area;
+    }
+    
+   
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome", type="string", length=255)
+     */
+    private $nome;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cognome", type="string", length=255)
+     */
+    private $cognome;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="indirizzo", type="string", length=255)
+     */
+    private $indirizzo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telefono", type="string", length=255)
+     */
+    private $telefono;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cellulare", type="string", length=255)
+     */
+    private $cellulare;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
+
+        /**
+     * @var string
+     * 
+     * 
+     * @ORM\ManyToOne(targetEntity="Ufficio")
+     * @ORM\JoinColumn(name="ufficio", referencedColumnName="id")
+     */
+    private $ufficio;
+    
+    
+    
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created", type="datetime")
+     */
+    private $created;
+    
+      /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="modify", type="datetime" ,nullable=true))
+     */
+    private $modify;
+    
+     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="datanascita", type="datetime" ,nullable=true)
+     */
+    private $datanascita;
+
+
+       /**
+     * @var string
+     * 
+     * 
+     * @ORM\ManyToOne(targetEntity="Comune")
+     * @ORM\JoinColumn(name="comune", referencedColumnName="id")
+     */
+    private $comune;
+
+    
+    
+    
+    
+
+  
+    
+  
+   
+}

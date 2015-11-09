@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>FileUploads</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href=" {{asset('bundles/filefile/css/bootstrap.css')}}" rel="stylesheet">
+        <link href="{{asset('bundles/filefile/css/bootstrap-responsive.css')}}" rel="stylesheet">
+        <link href=" {{asset('bundles/filefile/css/bootstrap-fileupload.css')}}" rel="stylesheet">
+        <link href=" {{asset('bundles/filefile/css/bootstrap-fileupload.min.css')}}" rel="stylesheet">
+    </head>
+
+    <body>
+{%if status is not defined %}
+            <div class="row-fluid">
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                    <div class="input-append">
+                        <form class="form" method ="POST"  enctype="multipart/form-data" action="{{path('file_file_homepage')}}">
+                            <h2 class="form-signin-heading">Please Upload</h2>
+                            <div class="uneditable-input span6">
+                                <i class="icon-file fileupload-exists"></i> 
+                                <span class="fileupload-preview"></span>
+                            </div>
+                            <span class="btn btn-file">
+                                <span class="fileupload-new">Select file</span>
+                                <span class="fileupload-exists">Change</span>
+                                <input type="file" name="img"/>
+                            </span>
+                            <button class="btn btn-primary fileupload-exists" type="submit">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+{% elseif status=='success'%}
+   {% if uploadedURL is defined%}
+            <img src="{{asset(uploadedURL)}}">
+   {% endif %}
+{% else %} 
+   {% if message is defined%}
+            <div class="alert alert-error">
+                <p>{{message}}</p>
+            </div>
+   {% endif %}
+{% endif %}
+
+            <script src="{{asset('bundles/filefile/js/jquery.js')}}"></script>
+            <script src="{{asset('bundles/filefile/js/bootstrap.js')}}"></script>
+            <script src="{{asset('bundles/filefile/js/bootstrap-fileupload.js')}}"></script>
+            <script src="{{asset('bundles/filefile/js/bootstrap-fileupload.min.js')}}"></script>
+        </body>

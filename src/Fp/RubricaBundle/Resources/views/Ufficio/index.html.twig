@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+     <li><a href="{{ path('rubrica') }}">Rubrica</a></li>
+    <h1>Ufficio list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ufficio</th>
+                <th>Tipo Ufficio</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('ufficio_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.ufficio }}</td>
+                <td>{{ entity.typeufficio }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('ufficio_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('ufficio_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('ufficio_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

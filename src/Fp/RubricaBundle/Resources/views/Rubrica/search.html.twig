@@ -1,0 +1,45 @@
+{# app/Resources/views/Rubrica/search.html.twig #}
+{% extends '::base.html.twig' %}
+{% block body -%}
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('rubrica') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
+    <h1>Ricerca Elenco Telefonico</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit">
+    {{ form_end(form) }}
+    {% if risultato_nomi is defined  %} 
+    {% if risultato_nomi is not empty %}   
+        <table class="records_list">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                    <th>Telefono</th>
+                    <th>Cellulare</th>
+                    <th>Email</th>
+                    <th>Ufficio</th>
+                    <th>typeUfficio</th>
+                </tr>
+            </thead>
+            {% for row in risultato_nomi %}
+                <tr>
+                    <td>{{ row.nome }}</td>
+                    <td>{{ row.cognome }}</td>
+                    <td>{{ row.telefono }}</td>
+                    <td>{{ row.cellulare }}</td>
+                    <td>{{ row.email }}</td>
+                    <td>{{ row.ufficio.ufficio }}</td>
+                    <td>{{ row.ufficio.typeufficio }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <strong>Il nominativo non è in elenco</strong>
+        {% endif %}
+        {% endif %}
+    {% endblock %}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="File\FileBundle\Entity\Bgyrjbusers" table="bgyrjbusers">
+    <id name="userid" type="integer" column="USERID">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="url" type="string" column="URL" length="255" nullable="true"/>
+    <field name="name" type="string" column="NAME" length="255" nullable="true"/>
+    <field name="email" type="string" column="EMAIL" length="255" nullable="true"/>
+    <field name="phone" type="string" column="PHONE" length="255" nullable="true"/>
+    <field name="address" type="string" column="ADDRESS" length="255" nullable="true"/>
+    <field name="age" type="string" column="AGE" length="255" nullable="true"/>
+    <field name="gender" type="string" column="GENDER" length="255" nullable="true"/>
+  </entity>
+</doctrine-mapping>

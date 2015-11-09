@@ -1,0 +1,55 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Anagrafica list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Indirizzo</th>
+                <th>Comune</th>
+                <th>Telefono</th>
+                <th>Cellulare</th>
+                <th>Sesso</th>
+                <th>Codicefiscale</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('anagrafica_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nome }}</td>
+                <td>{{ entity.cognome }}</td>
+                <td>{{ entity.indirizzo }}</td>
+                <td>{{ entity.comune }}</td>
+                <td>{{ entity.telefono }}</td>
+                <td>{{ entity.cellulare }}</td>
+                <td>{{ entity.sesso }}</td>
+                <td>{{ entity.codicefiscale }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('anagrafica_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('anagrafica_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('anagrafica_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

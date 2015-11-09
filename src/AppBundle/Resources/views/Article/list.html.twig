@@ -1,0 +1,10 @@
+{# app/Resources/views/article/list.html.twig #}
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <h1>Articoli recenti<h1>
+
+    {% for article in articles %}
+        {{ include('article/article_details.html.twig', { 'article': article }) }}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+{% block body -%}
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('fp_gestione_utente') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
+    <h1>Modifica Utente</h1>
+    {{ form_start(edit_form) }}
+    {{ form_widget(edit_form) }}
+    <input type="submit">
+    {{ form_end(edit_form) }}
+    {% if risultato is defined  %} 
+    {% if risultato is not empty %}   
+        <table class="records_list">
+            <thead>
+                <tr>
+                    <th>username</th>
+                    <th>mail</th>
+                    <th>roles</th>
+                </tr>
+            </thead>
+            {% for row in risultato %}
+                <tr>
+                    <td>{{ row.username }}</td>
+                    <td>{{ row.mail }}</td>
+                    <td>{{ row.roles }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <strong>Il nominativo non è in elenco</strong>
+        {% endif %}
+        {% endif %}
+    {% endblock %}

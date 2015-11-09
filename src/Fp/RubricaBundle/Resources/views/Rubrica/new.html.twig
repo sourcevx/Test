@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Rubrica creation</h1>
+
+    {{ form(form) }}
+    {{ form_start(form) }}
+    <strong>{{ form_errors(form) }}</strong>
+    {#{{ form_label(form.cognome) }}<br>
+    {{ form_widget(form.cognome) }}<br>#}
+    {{ form_row(form.nome) }}<br>
+    {{ form_row(form.cognome) }}<br>
+    {{ form_row(form.indirizzo) }}<br>
+    {{ form_row(form.telefono) }}
+    {{ form_row(form.cellulare) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.ufficio) }} <a href="{{ path('ufficio_new') }}">nuovo ufficio</a>
+    {{ form_row(form.datanascita) }}
+{#    {{ form_row(form.area) }}#}
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('rubrica') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+
+
+
+

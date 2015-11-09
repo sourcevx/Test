@@ -1,0 +1,60 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Anagrafica</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <td>{{ entity.nome }}</td>
+            </tr>
+            <tr>
+                <th>Cognome</th>
+                <td>{{ entity.cognome }}</td>
+            </tr>
+            <tr>
+                <th>Indirizzo</th>
+                <td>{{ entity.indirizzo }}</td>
+            </tr>
+            <tr>
+                <th>Comune</th>
+                <td>{{ entity.comune }}</td>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <td>{{ entity.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Cellulare</th>
+                <td>{{ entity.cellulare }}</td>
+            </tr>
+            <tr>
+                <th>Sesso</th>
+                <td>{{ entity.sesso }}</td>
+            </tr>
+            <tr>
+                <th>Codicefiscale</th>
+                <td>{{ entity.codicefiscale }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('anagrafica') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('anagrafica_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

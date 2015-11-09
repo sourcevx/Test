@@ -1,0 +1,29 @@
+{# app/Resources/views/blog/index.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+
+{% block body %}
+
+
+        
+            {% block sidebar %}
+                <div id="sidebar">
+                  {#  da base.html.twig  #}
+                    <ul>
+                        <li><a href="{{ path('app_main_contact') }}">HomePage</a></li>
+                     </ul>
+                </div>
+
+                 <div id="content">
+                    <h2>Il mio primo post</h2>
+                    <p>Il testo del primo post.</p>
+
+                    <h2>Un altro post</h2>
+                    <p>Il testo del secondo post.</p>
+                </div>    
+
+{% endblock %}
+
+            {% endblock %}

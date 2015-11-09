@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+{% block body -%}
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('fp_gestione_utente') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
+    <h1>Modifica Utente</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit">
+    {{ form_end(form) }}
+    {% endblock %}

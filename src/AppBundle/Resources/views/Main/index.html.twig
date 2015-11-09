@@ -1,0 +1,25 @@
+{# app/Resources/views/blog/index.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block title %}HomePage{% endblock %}
+    {% block body %}
+        
+            {% block sidebar %}
+                <div id="sidebar">
+                  {#  da base.html.twig  #}
+                    <ul>
+                        <li><a href="{{ path('app_main_contact') }}">HomePage</a></li>
+                        <li><a href="{{ path('app_blog_index') }}">Blog</a></li>
+                      {#   <li><a href="{{ path('app_calc_sum'){adendi_0}/{adendi_1} }}"</a>Calcolatrice</li> 
+                        <li><a href="{{ path('app_main_contact') }}">HelloWorld</a></li> #}
+                        <li><a href="{{ path('app_article_show') }}">Article</a></li>
+                        <li><a href="{{ path('product') }}">Product</a></li>
+                        <li><a href="{{ path('app_relation_relation') }}">Relation</a></li>
+                        <li><a href="{{ path('app_default_new') }}">Task</a></li>
+                     </ul>
+                </div>
+
+             
+{% endblock %}
+
+            {% endblock %}

@@ -1,0 +1,61 @@
+<?php 
+namespace Fp\UserBundle\Entity;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
+
+/**
+ * Fp\UserBundle\Entity\User
+ *
+ * @ORM\Table(name="Utenti")
+ * @ORM\Entity(repositoryClass="Fp\UserBundle\Entity\UserRepository")
+ */
+
+class User extends BaseUser
+
+{
+   /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    
+       
+    /**
+     * @var string $name
+     * 
+     *@ORM\Column(type="string", nullable=true, length=100)
+     */
+    protected $name;
+    
+    /**
+     * @var string $lastname
+     * 
+     *@ORM\Column(type="string", nullable=true, length=100)
+     */
+    protected $lastname;
+    
+     /**
+     * @var string $cell
+     * 
+     *@ORM\Column(type="string", nullable=true, length=20)
+     */
+    protected $cell;
+             
+    /**
+     * @var string $struttura
+     *
+     * @ORM\ManyToOne(targetEntity="Fp\AnagraficaBundle\Entity\Anagrafica")
+     * @ORM\JoinColumn(name="id_codicefiscale", referencedColumnName="id")
+     */
+    protected $codicefiscale;
+
+   
+   
+    
+}

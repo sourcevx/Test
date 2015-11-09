@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <li><a href="{{ path('rubrica') }}">Rubrica</a></li>
+    <h1>Ufficio creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+            
+    <li>
+         
+        <a href="{{ path('ufficio') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

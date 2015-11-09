@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Rubrica edit</h1>
+
+   {# {{ form(edit_form) }}#}
+   
+{{ form_start(edit_form) }}
+<strong>{{ form_errors(edit_form) }}</strong>
+{#{{ form_label(edit_form.cognome) }}<br>
+{{ form_widget(edit_form.cognome) }}<br>#}
+{{ form_row(edit_form.nome) }}<br>
+{{ form_row(edit_form.cognome) }}<br>
+
+{{ form_row(edit_form.indirizzo) }}<br>
+{{ form_row(edit_form.telefono) }}
+{{ form_row(edit_form.cellulare) }}
+{{ form_row(edit_form.email) }}
+{{ form_row(edit_form.ufficio) }} <span><a href="{{ path('ufficio_new') }}">nuovo ufficio</a></span>
+{{ form_row(edit_form.datanascita) }}
+
+{{ form_end(edit_form) }}
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('rubrica') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

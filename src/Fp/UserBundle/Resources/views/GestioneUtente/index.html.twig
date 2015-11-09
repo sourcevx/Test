@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Gestione Utenti</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+              
+                <th>Name</th>
+                <th>Lastname</th>
+              
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.lastname }}</td>
+                {#<td>
+                    {% for role in entity.roles %}
+                        {{ role }} <br> 
+                    {% endfor %}#}
+                </td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('fp_gestione_utente_modifica', { 'id': entity.id }) }}">Modifica </a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('fp_gestione_utente_creazione') }}">
+               Creazione Utente
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

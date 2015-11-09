@@ -1,0 +1,27 @@
+{# app/Resources/views/calc/index.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block title %}Calcolatrice{% endblock %}
+
+
+{% block body %}
+
+            {% block sidebar %}
+                <div id="sidebar">
+                  {#  da base.html.twig  #}
+                    <ul>
+                        <li><a href="{{ path('app_main_contact') }}">HomePage</a></li>
+                     </ul>
+                </div>
+
+                 <div id="content">
+                     {# {{ parent() }}#}
+ 
+                    {# <p>da index.html.twig Calc</p>#}
+                     <p>Il risultato della somma è: <strong>{{ Sum_Res }}</strong> </p>
+                </div>    
+
+{% endblock %}
+
+            {% endblock %}
+            
