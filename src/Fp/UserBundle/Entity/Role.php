@@ -147,4 +147,28 @@ class Role implements RoleInterface
         }
         return sprintf('%s', $this->name);
     }
+
+    /**
+     * Add child
+     *
+     * @param \Fp\UserBundle\Entity\Role $child
+     *
+     * @return Role
+     */
+    public function addChild(\Fp\UserBundle\Entity\Role $child)
+    {
+        $this->children[] = $child;
+
+        return $this;
+    }
+
+    /**
+     * Remove child
+     *
+     * @param \Fp\UserBundle\Entity\Role $child
+     */
+    public function removeChild(\Fp\UserBundle\Entity\Role $child)
+    {
+        $this->children->removeElement($child);
+    }
 }

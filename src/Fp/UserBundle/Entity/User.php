@@ -1,7 +1,7 @@
-<?php 
+<?php
+
 namespace Fp\UserBundle\Entity;
-
-
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 
@@ -11,11 +11,9 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="Utenti")
  * @ORM\Entity(repositoryClass="Fp\UserBundle\Entity\UserRepository")
  */
-
-class User 
-
+class User extends BaseUser
 {
-   /**
+    /**
      * @var integer $id
      *
      * @ORM\Column(name="id", type="integer")
@@ -24,8 +22,6 @@ class User
      */
     protected $id;
     
-    
-       
     /**
      * @var string $name
      * 
@@ -47,17 +43,19 @@ class User
      */
     protected $cell;
              
-    /**
-     * @var string $struttura
-     *
-     * @ORM\ManyToOne(targetEntity="Fp\AnagraficaBundle\Entity\Anagrafica")
-     * @ORM\JoinColumn(name="id_codicefiscale", referencedColumnName="id")
-     */
-    protected $codicefiscale;
 
-   
-   
-    
+
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set name
@@ -129,29 +127,5 @@ class User
     public function getCell()
     {
         return $this->cell;
-    }
-
-    /**
-     * Set codicefiscale
-     *
-     * @param \Fp\AnagraficaBundle\Entity\Anagrafica $codicefiscale
-     *
-     * @return User
-     */
-    public function setCodicefiscale(\Fp\AnagraficaBundle\Entity\Anagrafica $codicefiscale = null)
-    {
-        $this->codicefiscale = $codicefiscale;
-
-        return $this;
-    }
-
-    /**
-     * Get codicefiscale
-     *
-     * @return \Fp\AnagraficaBundle\Entity\Anagrafica
-     */
-    public function getCodicefiscale()
-    {
-        return $this->codicefiscale;
     }
 }
